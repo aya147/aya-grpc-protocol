@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.aya.common.openapi;
+
+option java_multiple_files = true;
+option java_package = "com.aya.user.openapi";
+
+//服务方法
+service UserService {
+  // 获取用户id
+  rpc GetUserId (UserIdRequest) returns (UserIdResponse) {}
+}
+
+message UserIdRequest {
+  // 请求的token
+  string token = 1;
+}
+
+message UserIdResponse {
+  // 用户id
+  int64 userId = 1;
+}

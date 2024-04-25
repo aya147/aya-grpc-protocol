@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.aya.common.openapi;
+
+option java_multiple_files = true;
+option java_package = "com.aya.common.openapi";
+
+//服务方法
+service IdCommonService {
+  // 获取美团Leaf分布式ID
+  rpc GetLeafId (LeafIdRequest) returns (LeafIdResponse) {}
+}
+
+message LeafIdRequest {
+  // 表名
+  string tableName = 1;
+}
+
+message LeafIdResponse {
+  // 叶子节点id，返回的分布式id
+  int64 leafId = 1;
+}
